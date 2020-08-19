@@ -1,10 +1,12 @@
 package airhacks.blogpad.posts.control;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
+@ApplicationScoped
 public class TitleNormalizer {
 
     @Inject
@@ -17,7 +19,7 @@ public class TitleNormalizer {
     public void init() {
         this.codePointSeparator =  this.titleSeparator.codePoints().
                                                 findFirst().
-                                                orElseThrow();
+                                                orElseThrow(() -> new IllegalArgumentException(""));
     }
  
     public String normalize(String title){

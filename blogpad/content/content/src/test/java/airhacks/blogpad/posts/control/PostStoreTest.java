@@ -6,6 +6,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.io.IOException;
+import java.util.UUID;
 
 import org.eclipse.microprofile.metrics.Counter;
 import org.eclipse.microprofile.metrics.MetricRegistry;
@@ -48,7 +49,7 @@ public class PostStoreTest {
     
     @Test
     public void savePostThenRead() throws IOException {
-        String title = "first";
+        String title = "first" + UUID.randomUUID().toString();
         Post expected = new Post(title, "hey,duke");
         this.cut.createNew(expected);
         

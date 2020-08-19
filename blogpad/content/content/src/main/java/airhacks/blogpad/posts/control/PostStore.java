@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.json.bind.JsonbBuilder;
@@ -21,6 +22,7 @@ import org.eclipse.microprofile.metrics.annotation.RegistryType;
 
 import airhacks.blogpad.posts.entity.Post;
 
+@ApplicationScoped
 public class PostStore {
 
     @Inject

@@ -33,7 +33,6 @@ import org.eclipse.microprofile.opentracing.Traced;
 import airhacks.blogpad.posts.control.PostStore;
 import airhacks.blogpad.posts.entity.Post;
 
-@DenyAll
 @Path("posts")
 public class PostsResource {
 
